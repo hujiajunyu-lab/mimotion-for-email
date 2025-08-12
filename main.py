@@ -37,7 +37,7 @@ def getWeather():
         return
     else:
         global K, type
-        url = 'https://api.kit9.cn/api/seven_days_weather/api.php?city=' + area
+        url = 'https://apis.kit9.cn/api/seven_days_weather/api.php?city=' + area
         hea = {'User-Agent': 'Mozilla/5.0'}
         r = requests.get(url=url, headers=hea)
         if r.status_code == 200:
