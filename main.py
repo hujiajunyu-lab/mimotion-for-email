@@ -144,8 +144,8 @@ def login(user, password):
         code = get_code(location)
     except:
         return 0, 0
-    # print("access_code获取成功！")
-    # print(code)
+     print("access_code获取成功！")
+     print(code)
 
     url2 = "https://account.huami.com/v2/client/login"
     data2 = {
@@ -165,11 +165,11 @@ def login(user, password):
     }
     r2 = requests.post(url2, data=data2, headers=headers).json()
     login_token = r2["token_info"]["login_token"]
-    # print("login_token获取成功！")
-    # print(login_token)
+    print("login_token获取成功！")
+    print(login_token)
     userid = r2["token_info"]["user_id"]
-    # print("userid获取成功！")
-    # print(userid)
+    print("userid获取成功！")
+    print(userid)
 
     return login_token, userid
 
@@ -211,7 +211,7 @@ def main(_user, _passwd, min_1, max_1):
     data = f'userid={userid}&last_sync_data_time=1597306380&device_type=0&last_deviceid=DA932FFFFE8816E7&data_json={data_json}'
 
     response = requests.post(url, data=data, headers=head).json()
-    # print(response)
+    print(response)
     result = f"[{now}]\n\n{user[:3]}****{user[7:]} 改步（{step}）\\[" + response['message'] + "]\n\n"
     print(result)
     return result
